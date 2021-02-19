@@ -9,7 +9,12 @@ def search(gitlab_server, token, file_filter, text, group=None, project_filter=N
     if (project_filter == '') and (group == ''):
         projects = gl.projects.list(all=True)
     else:
-        projects = gl.projects.list(search=project_filter, group=group)
+        group_object = gl.groups.get(group)
+        group_projects = group_object.projects.list(search=project_filter)
+        projects = []
+        for group_project in group_projects:
+            projects.append(gl.projects.get(group_project.id))
+    print("Number of projects:", len(projects))
     for project in projects:
         files = []
         try:
