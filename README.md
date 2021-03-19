@@ -1,10 +1,10 @@
 # gitlab-search
 Python's script to search texts in any project
 
-### Requirements
+## Requirements
 The script has been executed successfully with Python 3.8.5
 
-### Installation
+## Installation
 In order to do work the script you can create a virtual environment:
 
 ```bash
@@ -19,7 +19,7 @@ Alternatively, if you are working on Ubuntu or similar you can install required 
 sudo apt install python3-gitlab
 ```
 
-### Usage
+## Usage
 
 ```
 usage: gitlab-search.py [-h] [--api-debug] [--internal-debug] [--filename-is-regex]
@@ -39,3 +39,21 @@ optional arguments:
   --internal-debug     Show all iterated items and other dubugv info
   --filename-is-regex  FILE_FILTER become Python regular expressions, so it can be '.*\.cpp' to search for all files with extension cpp
 ```
+
+### Example
+```
+$ python3 gitlab-search.py 'https://gitlab.com' $API_TOKEN '.*' 'foobar00' test_group_for_gitlab-search_testing --filename-is-regex --internal-debug    
+Number of projects that will be searched: 2
+Project:  test_project_2
+  File:  test.txt
+Project:  test_project_1
+  File:  README.md
+  File:  foobar_zero-zero-two
+[{'project': 'test_project_2', 'file': 'test.txt'}, {'project': 'test_project_1', 'file': 'README.md'}, {'project': 'test_project_1', 'file': 'foobar_zero-zero-two'}]
+$
+```
+
+## Development
+### Testing
+Use `gitlab-search-test.py` - replace `'TOKEN_CHANGE_ME!'` with same token used for main script and just call `python3 gitlab-search-test.py`
+
