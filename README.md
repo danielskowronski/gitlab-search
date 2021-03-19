@@ -19,8 +19,19 @@ Alternatively, if you are working on Ubuntu or similar you can install required 
 sudo apt install python3-gitlab
 ```
 
-### Usage example:
+### Usage
 
-```bash
-python3 gitlab-search.py https://your-gitlab-server.com/ your_gitlab_user_token_key name_of_file_to_search_into text_to_search group project_filter
+```
+usage: gitlab-search.py [-h] GITLAB_SERVER GITLAB_USER_TOKEN FILE_FILTER TEXT_TO_SEARCH [GROUP] [PROJECT_FILTER]
+
+positional arguments:
+  GITLAB_SERVER      URL of Gitlab server, eg. https://gitlab.com/
+  GITLAB_USER_TOKEN  Access token with api_read access
+  FILE_FILTER        Filter for filenames to search in
+  TEXT_TO_SEARCH     Text to find in files
+  GROUP              Group to search for projects in, can be subgroup eg. parent_group/subgroup/another_subgroup
+  PROJECT_FILTER     Filter for project names to look into
+
+optional arguments:
+  -h, --help         show this help message and exit
 ```
