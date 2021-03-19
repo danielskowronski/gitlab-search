@@ -55,5 +55,6 @@ $
 
 ## Development
 ### Testing
-Use `gitlab-search-test.py` - replace `'TOKEN_CHANGE_ME!'` with same token used for main script and just call `python3 gitlab-search-test.py`
+Use [gitlab-search-test.py](gitlab-search-test.py) - replace `'TOKEN_CHANGE_ME!'` with same token used for main script and just call `python3 gitlab-search-test.py`
 
+This script uses this Gitlab group - [https://gitlab.com/test_group_for_gitlab-search_testing/](https://gitlab.com/test_group_for_gitlab-search_testing/)
