@@ -22,7 +22,7 @@ sudo apt install python3-gitlab
 ### Usage
 
 ```
-usage: gitlab-search.py [-h] GITLAB_SERVER GITLAB_USER_TOKEN FILE_FILTER TEXT_TO_SEARCH [GROUP] [PROJECT_FILTER]
+usage: gitlab-search.py [-h] [--debug] GITLAB_SERVER GITLAB_USER_TOKEN FILE_FILTER TEXT_TO_SEARCH [GROUP] [PROJECT_FILTER]
 
 positional arguments:
   GITLAB_SERVER      URL of Gitlab server, eg. https://gitlab.com/
@@ -34,4 +34,5 @@ positional arguments:
 
 optional arguments:
   -h, --help         show this help message and exit
+  --debug            Show all API calls
 ```
