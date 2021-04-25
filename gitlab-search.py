@@ -25,9 +25,9 @@ def search(gitlab_server, token, file_filter, text, group=None, project_filter=N
         projects = []
 
         if filter_projects:
-            group_projects = group_object.projects.list(search=project_filter)
+            group_projects = group_object.projects.list(search=project_filter, include_subgroups=True)
         else:
-            group_projects = group_object.projects.list(all=True)
+            group_projects = group_object.projects.list(all=True, include_subgroups=True)
             
         for group_project in group_projects:
             projects.append(gl.projects.get(group_project.id))
